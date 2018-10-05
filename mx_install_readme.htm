@@ -1,8 +1,8 @@
-<html>
-<head>
-<title>Mx Portal installation - readme</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<!-- link rel="stylesheet" href="templates/subSilver/subSilver.css" type="text/css" -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+<title>Mx Portal installation - readme</title><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><!-- link rel="stylesheet" href="templates/subSilver/subSilver.css" type="text/css" -->
+
 <style type="text/css">
 <!--
 /*
@@ -212,76 +212,344 @@ input.liteoption {
 		window.open('privmsg.php?mode=newpm', '_phpbbprivmsg', 'HEIGHT=225,resizable=yes,WIDTH=400');;
 	}
 //-->
-</script>
-</head>
-
-<body bgcolor="#FFFFFF" text="#000000">
+</script></head>
+<body bgcolor="#ffffff" text="#000000">
 <table>
-  <tr> 
-    <td colspan="2"><p><b><font size="5">mxBB Module - phpBB Integration<br>
-        <font size="2">v. 1.0.3</font></font></b></p>
-      <p><span style="font-weight: bold"><span style="font-size: 16px; line-height: normal">Module</span></span> 
-        <br />
-        - for Mx Portal v. 2.8.1+</p>
-      <p><strong>Author</strong><br />
-        Haplo<br />
-        <br />
-        <span style="font-weight: bold">Description</span> <br />
-        The MX Module is an addon product for the MX-portal.</p>
-      <p><strong>Features</strong> <br />
-        Easy to use and install/uninstall module.</p>
-      <p> <br />
-        I. <a href="#install">Installation instructions</a> <br />
-        <br />
-        II. <a href="#themes">Additional styles</a> <br />
-        <br />
-        III. <a href="#languages">Additional languages</a><br />
-        <br />
-        <a href="http://www.mx-system.com" target="_blank" class="postlink">DEMO 
-        </a> <br />
-        <br />
-        <a href="http://www.mx-system.com/index.php?page=4" target="_blank" class="postlink"> 
-        DOWNLOAD </a> <br />
-        <br /><a name="install">
-        <br />
-        <span style="font-weight: bold">I. Installation Instructions</span> <br />
-        To install this module, follow these instructions. If you encounter any 
-        problems during install, visit the <a href="http://www.mx-system.com/forum/viewforum.php?f=20" target="_blank" class="postlink"> 
-        module support forum</a>. </p>
-      <p>All install notes are maintained at www.mx-system.com, <a href="http://www.mx-system.com/forum/viewforum.php?f=11">here</a>.<br>
+  <tbody><tr> 
+    <td colspan="2"><p><b><font size="5">MXP</font><font size="5"> Module - Forum integration<br>
+        <font size="2">v. 2.0.4</font></font></b></p>
+      <p><span style="font-weight: bold;"><span style="font-size: 16px; line-height: normal;">Module</span></span>
         <br>
-        To summarize:<br>
-        If installing from scratch, use import module in the AdminCP.<br>
-        If upgrading, use the upgrade option in the AdminCP<br>
-        If uninstalling, use the delete feature in the AdminCP</p>
-      <p>Note: If upgrading, do NOT delete module prior to upgrading, or else 
-        you'll lose all module data!<br />
-        <br />
-        <a href="#top"> Back to Top</a> <br />
-        <br /><a name="themes">
-        <br />
-        <span style="font-weight: bold">II. Additional Styles</span> <br />
-        This module is compatible with any theme/style. <br />
-        <br />
-        <a href="#top"> Back to Top</a> <br />
-        <br /><a name="languages">
-        <br />
-        <span style="font-weight: bold">III. Additional Languages</span> <br />
-        First check to see if your language is already translated. <br />
-        <br />
-        Translated languages are downloaded <a href="http://www.mx-system.com/index.php?page=4&amp;action=category&amp;cat_id=5" target="_blank" class="postlink"> 
-        here</a>. <br />
-        <br />
+        - for MXP Core 2.8.x and 3.0.x (with some notes, see below)</p>
+      <p>Note: <em>This module currently supports phpBB2 mode only (with MXP
+      3.0.x)</em></p>      <strong>Author [Credits]</strong><br>
+        <a href="mailto:jon.ohlsson@mx-publisher.com">Jon Ohlsson</a> [Jon Ohlsson,&nbsp;
+        FlorinCB,&nbsp;Markus Petrux]<p><strong></strong><br>
+        <span style="font-weight: bold;">Description</span> <br>
+        The MX Module is an addon product for the MX-Portal.</p>
+      <p><strong>Features</strong> <br>
+        Easy to use and install/uninstall module.</p>
+      <p> <br>
+        I. <a href="#install">Installation instructions</a> <br>
+        <br>
+        II. <a href="#themes">Additional styles</a> <br>
+        <br>
+        III. <a href="#languages">Additional languages</a><br>
+        <br>
+        <a href="http://www.mx-system.com" target="_blank" class="postlink">DEMO 
+        </a> <br>
+        <br>
+        <a href="http://www.mx-system.com/index.php?page=4" target="_blank" class="postlink"> 
+        DOWNLOAD </a> <br>
+        <br><a name="install">
+        <br>
+        <span style="font-weight: bold;">I. Installation Instructions</span></a></p><p><a name="install"> <br></a><span class="postbody"><a name="Basic_Module_Structure"><span style="font-size: 18px; line-height: normal;"><span style="font-weight: bold;"><span style="text-decoration: underline;"></span></span></span></a></span></p><p><span class="postbody">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <a href="http://forums.phpmix.org/viewtopic.php?t=186">http://forums.phpmix.org/viewtopic.php?t=186</a><br>
+
+<br>
+<ul><li>This chapter introduces the basic <span style="color: blue;">mx_forum</span> module structure as well as the main procedures involved to help you figure out the overall process.
+<br>
+
+<br>
+</li><li><span style="text-decoration: underline;">Requirements BEFORE installing the mx_forum module:</span>
+<br>
+
+<br>
+<ul><li>Install phpBB following their own guides/requirements and verify it works.
+<br>
+</li><li>Install MX-System following their own guides/requirements and verify it works.
+<br>
+</li><li>Optionally, install other phpBB MODs and verify they work.
+<br>
+</li><li>Optionally, install other MX-Modules and verify they work.</li></ul>
+<br>
+&nbsp;Do not install <span style="color: blue;">mx_forum</span> module until you're sure everything is up and running.
+<br>
+
+<br>
+
+<br>
+</li><li>Once verified above requirements and BEFORE following any of the procedures described in this tutorial you should install the <span style="color: blue;">mx_forum</span> module, following standard Portal procedure for installing modules (ie. Unzip, Upload and AdminCP-&gt;ModuleAdmin-&gt;Install).
+<br>
+
+<br>
+<ul><li>Basic structure for <span style="color: blue;">mx_forum</span> module is:
+<br>
+
+<br>
+<ul><li>modules/mx_forum
+<br>
+</li><li>modules/mx_forum/mx_forum.pak
+<br>
+</li><li>modules/mx_forum/includes
+<br>
+</li><li>modules/mx_forum/includes/forum_hack.php
+<br>
+</li><li>modules/mx_forum/includes/forum_pages.php
+<br>
+</li><li>modules/mx_forum/templates
+<br>
+</li><li>modules/mx_forum/templates/subSilver</li></ul>
+<br>
+
+<br>
+</li><li>Module Attributes:
+<br>
+
+<br>
+<ul><li><span style="font-weight: bold;">Module Name:</span> <span style="color: blue;">phpBB Module</span>
+<br>
+</li><li><span style="font-weight: bold;">Description:</span> <span style="color: blue;">Self Modularized phpBB Module</span>
+<br>
+</li><li><span style="font-weight: bold;">Path:</span> <span style="color: blue;">modules/mx_forum/</span>
+<br>
+</li><li><span style="font-weight: bold;">Include this module in Admin Menu Navigation:</span> <span style="color: blue;">unchecked</span></li></ul>
+<br>
+
+<br>
+</li><li>Module Scripts:
+<br>
+
+<br>
+<ul><li><span style="font-weight: bold;">forum_hack.php</span>: This is 
+the script being included by phpBB Scripts, either at phpBB folder 
+(through common.php) or when ported as a Portal Block, at <span style="color: blue;">modules/mx_forum</span> folder. Here is where the core of the <span style="color: blue;">mx_forum</span> module lies. You should NOT touch the contents of this file for any reason.
+<br>
+
+<br>
+</li><li><span style="font-weight: bold;">forum_pages.php</span>: Here is
+ where phpBB Scripts are associated with their corresponding Portal 
+Pages. You should modify this file for every Portal Page you create for a
+ ported phpBB Script (see General Procedure to port a phpBB Script, 
+below).</li></ul>
+<br>
+
+<br>
+</li><li>The module will also contain block definitions for all phpBB scripts.
+<br>
+
+<br>
+ &nbsp;Here's the Module PAK file: <a href="https://web.archive.org/web/20070817025416/http://forums.phpmix.org/download.php?id=6" rel="nofollow" target="_blank" class="postlink"><span style="font-weight: bold;">mx_forum.pak</span></a>
+<br>
+</li></ul>
+<br>
+
+<br>
+</li><li>Once the <span style="color: blue;">mx_forum</span> module is installed, it is required to apply a small MOD (the phpBB Hook) to the file <span style="font-weight: bold;">common.php</span>
+ located at phpBB folder, in order to catch all requests made to phpBB 
+Scripts and transparently redirect them to the Portal when necessary 
+(please, see chapter &lt;a href="#Hooking_into_phpBB_Scripts"&gt;Hooking
+ into phpBB Scripts&lt;/a&gt; below).
+<br>
+
+<br>
+
+<br>
+</li><li>Once the <span style="color: blue;">mx_forum</span> module is installed and the <span style="color: blue;">Hook MOD</span> correctly applied...
+<br>
+
+<br>
+<span style="text-decoration: underline;">General procedure to <span style="font-weight: bold;">port</span> a phpBB Script as a Portal Block is:</span>
+<br>
+
+<br>
+<ul><li>Copy the phpBB script to <span style="color: blue;">modules/mx_forum</span> folder.
+<br>
+</li><li>Follow instructions on this tutorial on how to make the now <span style="color: blue;">mx_forum</span> version of the phpBB script (located at <span style="color: blue;">modules/mx_forum</span> folder), act and respond as a Portal Block.
+<br>
+</li><li>Create a new Portal Page for this ported phpBB script.
+<br>
+</li><li>Enable the Portal Page (by editing the <span style="color: blue;">modules/mx_forum/includes/forum_pages.php</span> file).
+<br>
+</li><li>And Go!</li></ul>
+<br>
+
+<br>
+</li><li>If you apply a MOD to a phpBB Script that you already ported as a Portal Block, then you should re-port that script again.
+<br>
+
+<br>
+<span style="text-decoration: underline;">General procedure to <span style="font-weight: bold;">re-port</span> a phpBB script is:</span>
+<br>
+
+<br>
+<ul><li>Copy your MOD'd phpBB script to <span style="color: blue;">modules/mx_forum</span> folder.
+<br>
+</li><li>Follow this tutorial to re-apply changes to that script, so it 
+becomes a Portal Block again. Though, this time you'll do it faster. <img src="https://web.archive.org/web/20070817025416im_/http://forums.phpmix.org:80/images/smiles/icon_wink.gif" alt="Wink" border="0"></li></ul>
+<br>
+
+<br>
+</li><li>Once a phpBB script has been ported as a Portal Block, it will 
+always be rendered within a Portal Page (as far as that particular Page 
+exists<span style="font-size: 9px; line-height: normal;"><span style="color: red;">(*)</span></span>) ...even if the script is invoked from the phpBB folder!!! As an example, if someone clicks on <span style="color: blue;">http://www.domain.com/forum/viewtopic.php?t=</span><span style="color: green;">xx</span> it will be automatically redirected to somewhere like <span style="color: blue;">http://www.domain.com/index.php?page=</span><span style="color: green;">nn</span><span style="color: blue;">&amp;t=</span><span style="color: green;">xx</span>. And everything transparent to the end-user<span style="font-size: 9px; line-height: normal;"><span style="color: red;">(**)</span></span>. That's the magic behind the Hook installed to <span style="font-weight: bold;">common.php</span> at phpBB side.
+<br>
+
+<br>
+Notes:
+<br>
+<span style="font-size: 9px; line-height: normal;"><span style="color: red;">(*)</span></span> The Page where you have placed that particular Block has been <span style="font-weight: bold;">enabled</span> by editing the <span style="color: blue;">modules/mx_forum/includes/forum_pages.php</span> file.
+<br>
+<span style="font-size: 9px; line-height: normal;"><span style="color: red;">(**)</span></span>
+ All known phpBB links will still work as entry points, then redirected 
+to a Portal Page when necessary ...if you're worried about Bots or topic
+ references you may already have, etc.
+<br>
+
+<br>
+Additionally, once a phpBB script is ported as a Portal Block, you are 
+allowed to use Portal features ...like permissions at Block or Page 
+level. As an example: say you want to avoid guests accessing your 
+memberlist... well, now you can set the correspoding Page as VIEW=REG. 
+Or... to allow access to Private Messaging just for a particular User 
+Group, just set the Page as VIEW=PRIVATE and PRIVATE=UserGroup, and so 
+on...
+<br>
+
+<br>
+
+<br>
+</li><li>If you wish to uninstall a ported phpBB script, all you need to do is:
+<br>
+
+<br>
+<ul><li>Disable the Portal Page (by editing the <span style="color: blue;">modules/mx_forum/includes/forum_pages.php</span> file).
+<br>
+</li><li>Remove the Block from the Portal Page.
+<br>
+</li><li>Remove the script from the <span style="color: blue;">modules/mx_forum</span> folder.</li></ul>
+<br>
+
+<br>
+
+<br>
+</li><li>Finally, if you wish to uninstall the whole thing, the procedure is as simple as:
+<br>
+
+<br>
+<ul><li>Remove the Hook at phpBB side (see chapter: &lt;a 
+href="#Hooking_into_phpBB_Scripts"&gt;Hooking into phpBB 
+Scripts&lt;/a&gt; below).
+<br>
+</li><li>Goto AdminCP-&gt;PageAdmin and Delete the pages related to <span style="color: blue;">mx_forum</span> Blocks.
+<br>
+</li><li>Goto AdminCP-&gt;ModuleAdmin and Delete the <span style="color: blue;">mx_forum</span> Module.
+<br>
+</li><li>And remove the folder <span style="color: blue;">modules/mx_forum</span>.</li></ul></li></ul>
+<br>
+
+<br>
+&lt; <a href="https://web.archive.org/web/20070817025416/http://forums.phpmix.org:80/viewtopic.php?t=186#Contents">Back to Contents</a> &gt;</span>
+
+		
+	<br><br>
+          
+							</p><div align="center"><hr width="95%"></div><br><div align="center"><hr width="95%"></div>
+		
+<span class="postbody"><br>&nbsp;<br>&nbsp;<br>_________________<br><a href="https://web.archive.org/web/20070817025416/http://www.phpmix.org/" rel="nofollow" target="_blank">http://www.phpmix.org</a></span><span class="gensmall">&nbsp;</span><table style="width: 1194px; height: 919px;" class="forumline" border="0" cellpadding="4" cellspacing="1"><tbody><tr><th class="thHead" style="height: 25px; width: 100%;">Preview</th>
+	</tr>
+	<tr> 
+		<td class="row1"><span class="postdetails">Posted:  &nbsp;&nbsp;&nbsp; Post subject: mx_phpbb - Install instructions</span></td>
+	</tr>
+	<tr> 
+		<td class="row1"><table style="width: 1182px; height: 844px;" border="0" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td>
+					<span class="postbody"><br>Here are the updated instructions for mx_phpbb
+<br><br>The install instructions have been updated to match normal phpBB MOD guidelines.<br>&nbsp;<br></span>
+<table align="center" border="0" cellpadding="3" cellspacing="1" width="90%">
+<tbody><tr> 
+	  <td><span class="genmed"><b>Quote:</b></span></td>
+	</tr>
+	<tr>
+	  <td class="quote">
+<br>
+<br>/********************************************************************************
+<br>
+<br>|	Installation Instructions
+<br>
+<br>********************************************************************************/
+<br>
+<br>
+<br>
+<br><span style="font-weight: bold;">Note: </span> In order for this module to install you must have a working phpBB and mxBB installation.
+<br>	<span style="font-style: italic;">phpbbroot</span> refers to where your phpBB2 install is located, e.g in [i:]phpBB2/[/i] or <span style="font-style: italic;">forum/</span>
+<br>
+<br>
+<br>#
+<br>#-----[ OPEN ]------------------------------------------
+<br>#
+<br>
+<br><span style="font-style: italic;">phpbbroot</span>/common.php
+<br>
+<br>#
+<br>#-----[ FIND ]------------------------------------------
+<br>#
+<br>
+<br>?&gt;
+<br>
+<br>#
+<br>#-----[ REPLACE WITH ]------------------------------------------
+<br>#
+<br>
+<br>/*<br>&nbsp;+mx_forum<br>*/<br>if( !defined('IN_ADMIN') &amp;&amp; defined('IN_CMS') )<br>{<br>&nbsp;&nbsp;&nbsp; $mx_root_path = './../';<br>&nbsp;&nbsp;&nbsp; $mx_table_prefix = 'mx_';<br>&nbsp;&nbsp;&nbsp; $modules_root_path = $mx_root_path&nbsp; . 'modules/mx_forum/';<br>&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp;
+if (function_exists('custom_file_exists') &amp;&amp;
+(@custom_file_exists($modules_root_path.'includes/forum_hack.'.$phpEx))
+)<br>&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; include_once($modules_root_path.'includes/forum_hack.'.$phpEx);<br>&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp; elseif (@file_exists($modules_root_path.'includes/forum_hack.'.$phpEx))<br>&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; include_once($modules_root_path.'includes/forum_hack.'.$phpEx);<br>&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; @define('PORTAL_BACKEND', 'phpbb2');<br>&nbsp;&nbsp;&nbsp; @define('CMS_ROOT_PATH', $mx_root_path);&nbsp;&nbsp;&nbsp; <br>}<br>/*<br>-mx_forum<br>*/<br><br>
+<br>?&gt;
+<br>
+<br>#
+<br>#-----[ SAVE/CLOSE ALL FILES ]------------------------------------------
+<br>#
+<br># EoM
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>**	Now, add the newly created mx_phpbb Block to a relevant portal page
+<br>	and remove, the now redundant mx_forum block.
+<br>
+<br>
+<br>
+<br></td>
+	</tr>
+</tbody></table>
+<span class="postbody"></span>
+				</td>
+			</tr>
+		</tbody></table></td>
+	</tr>
+	<tr> 
+		<td class="spaceRow" height="1"><img src="http://localhost/phpbb2/templates/subSilver/images/spacer.gif" height="1" width="1"></td>
+	</tr>
+</tbody></table>
+
+<span class="nav"><a href="http://localhost/phpbb2/index.php?style=2&amp;sid=6325db8df74ade7293577f5bd2e6e0e7" class="nav"> </a></span><p><br>
+        <br>
+        <a href="#top"> Back to Top</a> <br>
+        <br><a name="themes">
+        <br>
+        <span style="font-weight: bold;">II. Additional Styles</span> <br>
+        This module is compatible with any theme/style. <br>
+        <br>
+        </a><a href="#top"> Back to Top</a> <br>
+        <br><a name="languages">
+        <br>
+        <span style="font-weight: bold;">III. Additional Languages</span> <br>
+        First check to see if your language is already translated. <br>
+        <br>
+        Translated languages are downloaded </a><a href="http://www.mx-system.com/index.php?page=4&amp;action=category&amp;cat_id=5" target="_blank" class="postlink"> 
+        here</a>. <br>
+        <br>
         If exists, download and install in the modules/mx_modulename/language 
         folder. If not, duplicate (copy and paste) any included language file, 
         rename to match your language, translate using any texteditor, save and 
-        upload. <br />
-        <br />
+        upload. <br>
+        <br>
         <a href="#top"> Back to Top</a> </p>
 		
       <p> /Mx Team</p>
     </td>
 			</tr>
-</table>
-</body>
-</html>
+</tbody></table>
+</body></html>

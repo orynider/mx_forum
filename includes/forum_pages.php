@@ -155,13 +155,13 @@ if ( empty( $_SESSION['phpbb_setup'] ) )
 
 // Start initial var setup
 
-if ( isset( $HTTP_GET_VARS[POST_FORUM_URL] ) || isset( $HTTP_POST_VARS[POST_FORUM_URL] ) )
+if ( isset( $_GET[POST_FORUM_URL] ) || isset( $_POST[POST_FORUM_URL] ) )
 {
-	$forum_id = ( isset( $HTTP_GET_VARS[POST_FORUM_URL] ) ) ? intval( $HTTP_GET_VARS[POST_FORUM_URL] ) : intval( $HTTP_POST_VARS[POST_FORUM_URL] );
+	$forum_id = ( isset( $_GET[POST_FORUM_URL] ) ) ? intval( $_GET[POST_FORUM_URL] ) : intval( $_POST[POST_FORUM_URL] );
 }
-else if ( isset( $HTTP_GET_VARS['forum'] ) )
+else if ( isset( $_GET['forum'] ) )
 {
-	$forum_id = intval( $HTTP_GET_VARS['forum'] );
+	$forum_id = intval( $_GET['forum'] );
 }
 else
 {
@@ -170,24 +170,24 @@ else
 
 $sql = '';
 $topic_id = $post_id = 0;
-if ( isset( $HTTP_GET_VARS[POST_TOPIC_URL] ) )
+if ( isset( $_GET[POST_TOPIC_URL] ) )
 {
-	$topic_id = intval( $HTTP_GET_VARS[POST_TOPIC_URL] );
+	$topic_id = intval( $_GET[POST_TOPIC_URL] );
 	$sql = "SELECT forum_id
 	FROM " . TOPICS_TABLE . " 
 	WHERE topic_id = $topic_id";
 }
-else if ( isset( $HTTP_GET_VARS['topic'] ) )
+else if ( isset( $_GET['topic'] ) )
 {
-	$topic_id = intval( $HTTP_GET_VARS['topic'] );
+	$topic_id = intval( $_GET['topic'] );
 	$sql = "SELECT forum_id
 	FROM " . TOPICS_TABLE . " 
 	WHERE topic_id = $topic_id";
 }
 
-if ( isset( $HTTP_GET_VARS[POST_POST_URL] ) )
+if ( isset( $_GET[POST_POST_URL] ) )
 {
-	$post_id = intval( $HTTP_GET_VARS[POST_POST_URL] );
+	$post_id = intval( $_GET[POST_POST_URL] );
 	$sql = "SELECT forum_id
 	FROM " . POSTS_TABLE . "  
 	WHERE post_id = $post_id";

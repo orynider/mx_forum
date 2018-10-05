@@ -23,7 +23,7 @@ define( 'IN_PORTAL', true );
 if ( !defined( 'IN_ADMIN' ) )
 {
 	$mx_root_path = './../../';
-	include( $mx_root_path . 'extension.inc' );
+	$phpEx = substr(strrchr(__FILE__, '.'), 1);
 	include( $mx_root_path . 'common.' . $phpEx ); 
 	// Start session management
 	$userdata = session_pagestart( $user_ip, PAGE_INDEX );
@@ -41,8 +41,8 @@ if ( !defined( 'IN_ADMIN' ) )
 	// End session management
 }
 
-$mx_module_version = 'mxBB - phpBB Integration Module 1.0.3';
-$mx_module_copy = 'Based on <a href="http://www.phpbb.com/" target="_phpbb">phpBB</a>';
+$mx_module_version = '3.0.3';
+$mx_module_copy = 'phpBB Integration Module. Based on <a href="http://www.phpbb.com/" target="_phpbb">phpBB</a>';
 
 // If fresh install
 
@@ -58,23 +58,27 @@ if ( !$result = $db->sql_query( "SELECT config_name from " . $mx_table_prefix . 
   			 	   	    config_name VARCHAR(255) NOT NULL default '', 
 						config_value varchar(255) NOT NULL default '',
 						PRIMARY KEY  (config_name)
-						) TYPE=MyISAM";
+						) ";
 
-	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('override_default_pages', 'Block_setup')";
-	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('faq', '0')";
-	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('groupcp', '0')";
+	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('override_default_pages', '0')";
+	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('enable_module', '1')";	
+	
+	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('faq', '2')";
+	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('groupcp', '2')";
 	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('index', '2')";
-	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('login', '0')";
-	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('memberlist', '0')";
-	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('modcp', '0')";
-	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('posting', '0')";
-	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('privmsg', '0')";
-	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('profile', '0')";
-	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('search', '0')";
-	//$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('viewforum', '0')";
-	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('viewonline', '0')";
-	//$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('viewtopic', '0')";
-
+	
+	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('login', '2')";
+	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('memberlist', '2')";
+	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('modcp', '2')";
+	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('posting', '2')";
+	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('privmsg', '2')";
+	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('profile', '2')";
+	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('search', '2')";
+	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('viewforum', '2')";
+	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('viewonline', '2')";
+	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('viewtopic', '2')";
+	$sql[] = "INSERT INTO " . $mx_table_prefix . "phpbb_plugin_config VALUES ('other', '2')";
+	
 	$sql[] = "CREATE TABLE " . $mx_table_prefix . "topic_add_type (
   	topic_type_name varchar(64) NOT NULL default '',
   	topic_type_id tinyint(4) NOT NULL default '0',
@@ -84,7 +88,7 @@ if ( !$result = $db->sql_query( "SELECT config_name from " . $mx_table_prefix . 
   	topic_type_color varchar(6) NOT NULL default '0',
   	topic_type_image varchar(255) default NULL,
   	topic_type_image_new varchar(255) default NULL
-						) TYPE=MyISAM";
+						) ";
 
 	$sql[] = "INSERT INTO " . $mx_table_prefix . "topic_add_type VALUES ('announce', 0, -1, 0, -1, 'FF0000', '', '')";
 	$sql[] = "INSERT INTO " . $mx_table_prefix . "topic_add_type VALUES ('sticky', 0, -1, 0, -1, 'FAD400', '', '')";

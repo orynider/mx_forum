@@ -23,7 +23,7 @@ define( 'IN_PORTAL', true );
 if ( !defined( 'IN_ADMIN' ) )
 {
 	$mx_root_path = './../../';
-	include( $mx_root_path . 'extension.inc' );
+	$phpEx = substr(strrchr(__FILE__, '.'), 1);
 	include( $mx_root_path . 'common.' . $phpEx ); 
 	// Start session management
 	$userdata = session_pagestart( $user_ip, PAGE_INDEX );

@@ -7,46 +7,28 @@
  *    Auteur               : Poupoune < poupoune@phpbb-fr.com >
  *    Contact              : http://php-tools.org/poupoune/
  */
-define( 'IN_PORTAL', 1 );
+
+//namespace haplo2\mx_forum\acp;
+$basename = basename( __FILE__);
+$mx_root_path = './../../../';
+$module_root_path = $mx_root_path . 'modules/mx_forum/';
+$admin_module_root_path = $module_root_path . 'admin/';
 
 if ( !empty( $setmodules ) )
 {
-	$file = basename( __FILE__ );
-	$module['phpBB plugin']['Topic Icons'] = 'modules/mx_forum/admin/' . $file;
+	$module['phpBB plugin']['Topic Icons'] = mx_append_sid( $admin_module_root_path . $basename . '?s=phpbb_ext&mode=settings');		
 	return;
 }
 
-/*
-define('IN_PHPBB', true);
+define('IN_PORTAL', 1);
+define('IN_ADMIN', 1); 
+$phpEx = substr( __FILE__, strrpos( __FILE__, '.') + 1);
 
-if( !empty($setmodules) )
-{
-        $file = basename(__FILE__);
-        $module['admin_topic_type']['Configuration'] = "$file";
-        return;
-}
-
-//
-// Let's set the root dir for phpBB
-$phpbb_root_path = "./../";
-require($phpbb_root_path . 'extension.inc');
-require('./pagestart.' . $phpEx);
-
-//
-// Start session management
-//
-$userdata = session_pagestart($user_ip, PAGE_INDEX);
-init_userprefs($userdata);
-
-*/
-
-$mx_root_path = '../../../';
-$module_root_path = "../";
-require( $mx_root_path . 'extension.inc' );
 require( $mx_root_path . '/admin/pagestart.' . $phpEx );
 
 include_once( $mx_root_path . 'admin/page_header_admin.' . $phpEx );
 include_once( $module_root_path . 'includes/phpbb_constants.' . $phpEx );
+
 // 
 // On récupère les données de la base
 $sql = "SELECT * FROM " . TOPIC_ADD_TYPE_TABLE . " 
@@ -113,10 +95,18 @@ while ( $row = $db->sql_fetchrow( $result ) )
 	$sticky_color = '#' . $row['sticky_color'];
 }
 
-$template->set_filenames( array( "body" => "admin/topic_type_body.tpl" ) 
-	);
+// Load a template from adm/style for our ACP page
+$tpl_name = 'topic_type_body';
+// Set the page title for our ACP page
+$page_title = $lang['Forum_admin'];
 
-$template->assign_vars( array( 'L_TOPIC_TYPE_GESTION' => $lang['Topic_type_gestion'],
+//
+// Start page proper
+//
+$template->set_filenames(array('body' => 'admin/'.$tpl_name.'.html'));
+
+$template->assign_vars( array( 
+		'L_TOPIC_TYPE_GESTION' => $lang['Topic_type_gestion'],
 		'L_TOPIC_TYPE_NAME' => $lang['Topic_type_name'],
 		'L_TOPIC_TYPE_AUTH' => $lang['Permissions'],
 		'L_TOPIC_TYPE_COLOR' => $lang['Color'],

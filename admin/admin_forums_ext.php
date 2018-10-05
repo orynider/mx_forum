@@ -15,21 +15,23 @@
  *    the Free Software Foundation; either version 2 of the License, or
  *    (at your option) any later version.
  */
-
-define( 'IN_PORTAL', 1 );
+ 
+//namespace haplo2\mx_forum\acp;
+$basename = basename( __FILE__);
+$mx_root_path = './../../../';
+$module_root_path = $mx_root_path . 'modules/mx_forum/';
+$admin_module_root_path = $module_root_path . 'admin/';
 
 if ( !empty( $setmodules ) )
 {
-	$file = basename( __FILE__ );
-	$module['phpBB plugin']['Management'] = 'modules/mx_forum/admin/' . $file;
+	$module['phpBB plugin']['Management'] = mx_append_sid( $admin_module_root_path . $basename . '?s=phpbb_ext&mode=settings');		
 	return;
 }
 
-$mx_root_path = '../../../';
-$module_root_path = "../";
-require( $mx_root_path . 'extension.inc' );
+define('IN_PORTAL', 1);
+define('IN_ADMIN', 1); 
+$phpEx = substr( __FILE__, strrpos( __FILE__, '.') + 1);
 require( $mx_root_path . '/admin/pagestart.' . $phpEx );
-
 include_once( $mx_root_path . 'admin/page_header_admin.' . $phpEx );
 include_once( $module_root_path . 'includes/phpbb_constants.' . $phpEx );
 
@@ -56,8 +58,8 @@ else
 		$phpbb_config_value = $row['config_value'];
 		$phpbb_default_config[$phpbb_config_name] = $phpbb_config_value;
 
-		$phpbb_new[$phpbb_config_name] = ( isset( $HTTP_POST_VARS[$phpbb_config_name] ) ) ? $HTTP_POST_VARS[$phpbb_config_name] : $phpbb_default_config[$phpbb_config_name];
-		if ( isset( $HTTP_POST_VARS['submit'] ) )
+		$phpbb_new[$phpbb_config_name] = ( isset( $_POST[$phpbb_config_name] ) ) ? $_POST[$phpbb_config_name] : $phpbb_default_config[$phpbb_config_name];
+		if ( isset( $_POST['submit'] ) )
 		{
 			$sql = "UPDATE " . PHPBB_CONFIG_TABLE . " SET
 			   		config_value = '" . str_replace( "\'", "''", $phpbb_new[$phpbb_config_name] ) . "'
@@ -69,7 +71,7 @@ else
 		}
 	}
 
-	if ( isset( $HTTP_POST_VARS['submit'] ) )
+	if ( isset( $_POST['submit'] ) )
 	{
 		$message = $lang['phpbb_config_updated'] . "<br /><br />" . sprintf( $lang['Click_return_phpbb_config'], "<a href=\"" . append_sid( "admin_forums_ext.$phpEx" ) . "\">", "</a>" ) . "<br /><br />" . sprintf( $lang['Click_return_admin_index'], "<a href=\"" . append_sid( $mx_root_path . "admin/index.$phpEx?pane=right" ) . "\">", "</a>" );
 		mx_message_die( GENERAL_MESSAGE, $message );
@@ -93,11 +95,16 @@ $phpbb_viewforum = $phpbb_new['viewforum'];
 $phpbb_viewonline = $phpbb_new['viewonline'];
 $phpbb_viewtopic = $phpbb_new['viewtopic'];
 $phpbb_override_default_pages = $phpbb_new['override_default_pages'];
+				
+// Load a template from adm/style for our ACP page
+$tpl_name = 'forum_admin_body_ext';
+// Set the page title for our ACP page
+$page_title = $lang['Forum_admin'];
 
 //
 // Start page proper
 //
-$template->set_filenames( array( "body" => "admin/forum_admin_body_ext.tpl" ));
+$template->set_filenames(array('body' => 'admin/'.$tpl_name.'.html'));
 
 $template->assign_vars( array( 
 		'S_FORUM_ACTION' => append_sid( "admin_forums_ext.$phpEx" ),

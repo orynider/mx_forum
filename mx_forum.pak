@@ -1,57 +1,57 @@
-module=+:51=+:phpBB Module=+:modules/mx_forum/=+:Self Modularized phpBB Module=+:1
+module=+:58=+:Forum Module=+:modules/mx_forum/=+:Self Modularized phpBB Module=+:1
 New_function=+:---------------------------=+:0=+:0=+:0=+:0=+:0
-function=+:51=+:82=+:phpBB: FAQ (Forum)=+:=+:faq.php=+:
+function=+:58=+:67=+:FAQ (Forum)=+:=+:faq.php=+:
 parameter=+:0=+:0=+:0=+:endoflist=+:0=+:0
-block=+:=+:Demo - phpBB: FAQ (Forum)=+:Demo block=+:82=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
+block=+:=+:FAQ (Forum)=+:Demo block=+:46=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
 New_function=+:---------------------------=+:0=+:0=+:0=+:0=+:0
-function=+:51=+:83=+:phpBB: GroupCP=+:=+:groupcp.php=+:
+function=+:58=+:68=+:GroupCP=+:GroupCP=+:groupcp.php=+:
 parameter=+:0=+:0=+:0=+:endoflist=+:0=+:0
-block=+:=+:Demo - phpBB: GroupCP=+:Demo block=+:83=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
+block=+:=+:GroupCP=+:Demo block=+:47=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
 New_function=+:---------------------------=+:0=+:0=+:0=+:0=+:0
-function=+:51=+:84=+:phpBB: Index=+:=+:index.php=+:
-parameter=+:84=+:166=+:phpbb_type_select=+:phpbb_type_select=+:=+:
+function=+:58=+:69=+:phpBB=+:phpBB_Forums=+:index.php=+:
+parameter=+:58=+:133=+:Source_phpBB_Forums=+:phpbb_type_select=+:=+:=+:0=+:0
 parameter=+:0=+:0=+:0=+:endoflist=+:0=+:0
-block=+:=+:Demo - phpBB: Index=+:Demo block=+:84=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
+block=+:=+:Index=+:Demo block=+:58=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
 New_function=+:---------------------------=+:0=+:0=+:0=+:0=+:0
-function=+:51=+:85=+:phpBB: Login=+:=+:login.php=+:
+function=+:58=+:85=+:Login=+:Login=+:login.php=+:
 parameter=+:0=+:0=+:0=+:endoflist=+:0=+:0
-block=+:=+:Demo - phpBB: Login=+:Demo block=+:85=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
+block=+:=+:Login=+:Demo block=+:85=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
 New_function=+:---------------------------=+:0=+:0=+:0=+:0=+:0
-function=+:51=+:86=+:phpBB: Memberlist=+:=+:memberlist.php=+:
+function=+:58=+:86=+:Memberlist=+:Memberlist=+:memberlist.php=+:
 parameter=+:0=+:0=+:0=+:endoflist=+:0=+:0
-block=+:=+:Demo - phpBB: Memberlist=+:Demo block=+:86=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
+block=+:=+:Memberlist=+:Demo block=+:86=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
 New_function=+:---------------------------=+:0=+:0=+:0=+:0=+:0
-function=+:51=+:87=+:phpBB: ModCP=+:=+:modcp.php=+:
+function=+:58=+:87=+:ModCP=+:=+:modcp.php=+:
 parameter=+:0=+:0=+:0=+:endoflist=+:0=+:0
-block=+:=+:Demo - phpBB: ModCP=+:Demo block=+:87=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
+block=+:=+:ModCP=+:Demo block=+:87=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
 New_function=+:---------------------------=+:0=+:0=+:0=+:0=+:0
-function=+:51=+:88=+:phpBB: Posting=+:=+:posting.php=+:
+function=+:58=+:88=+:Posting=+:Posting=+:posting.php=+:
 parameter=+:0=+:0=+:0=+:endoflist=+:0=+:0
-block=+:=+:Demo - phpBB: Posting=+:Demo block=+:88=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
+block=+:=+:Posting=+:Demo block=+:88=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
 New_function=+:---------------------------=+:0=+:0=+:0=+:0=+:0
-function=+:51=+:89=+:phpBB: Private Messages=+:=+:privmsg.php=+:
+function=+:58=+:89=+:Private Messages=+:Private Messages=+:privmsg.php=+:
 parameter=+:0=+:0=+:0=+:endoflist=+:0=+:0
-block=+:=+:Demo - phpBB: Private Messages=+:Demo block=+:89=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
+block=+:=+:Private Messages=+:Demo block=+:89=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
 New_function=+:---------------------------=+:0=+:0=+:0=+:0=+:0
-function=+:51=+:90=+:phpBB: Profile=+:=+:profile.php=+:
+function=+:58=+:90=+:Profile=+:Profile=+:profile.php=+:
 parameter=+:0=+:0=+:0=+:endoflist=+:0=+:0
-block=+:=+:Demo - phpBB: Profile=+:Demo block=+:90=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
+block=+:=+:Profile=+:Demo block=+:90=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
 New_function=+:---------------------------=+:0=+:0=+:0=+:0=+:0
-function=+:51=+:91=+:phpBB: Search=+:=+:search.php=+:
+function=+:58=+:91=+:Search=+:Search=+:search.php=+:
 parameter=+:0=+:0=+:0=+:endoflist=+:0=+:0
-block=+:=+:Demo - phpBB: Search=+:Demo block=+:91=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
+block=+:=+:Search=+:Demo block=+:91=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
 New_function=+:---------------------------=+:0=+:0=+:0=+:0=+:0
-function=+:51=+:92=+:phpBB: ViewForum=+:=+:viewforum.php=+:
-parameter=+:92=+:167=+:phpbb_type_select=+:phpbb_type_select=+:=+:
+function=+:58=+:92=+:ViewForum=+:=+:viewforum.php=+:
+parameter=+:92=+:167=+:Source_ViewForum=+:phpbb_type_select=+:=+:=+:0=+:0
 parameter=+:0=+:0=+:0=+:endoflist=+:0=+:0
-block=+:=+:Demo - phpBB: ViewForum=+:Demo block=+:92=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
+block=+:=+:ViewForum=+:Demo block=+:92=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
 New_function=+:---------------------------=+:0=+:0=+:0=+:0=+:0
-function=+:51=+:93=+:phpBB: ViewOnline=+:=+:viewonline.php=+:
+function=+:58=+:93=+:ViewOnline=+:ViewOnline=+:viewonline.php=+:
 parameter=+:0=+:0=+:0=+:endoflist=+:0=+:0
-block=+:=+:Demo - phpBB: ViewOnline=+:Demo block=+:93=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
+block=+:=+:ViewOnline=+:Demo block=+:93=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
 New_function=+:---------------------------=+:0=+:0=+:0=+:0=+:0
-function=+:51=+:94=+:phpBB: ViewTopic=+:=+:viewtopic.php=+:
-parameter=+:94=+:316=+:phpbb_type_select=+:phpbb_type_select=+:=+:
+function=+:58=+:94=+:ViewTopic=+:ViewTopic=+:viewtopic.php=+:
+parameter=+:94=+:168=+:Source_ViewTopic=+:phpbb_type_select=+:=+:=+:0=+:0
 parameter=+:0=+:0=+:0=+:endoflist=+:0=+:0
-block=+:=+:Demo - phpBB: ViewTopic=+:Demo block=+:94=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
+block=+:=+:ViewTopic=+:Demo block=+:94=+:0=+:5=+:0=+:0=+:0=+:0=+:1=+:1
 function=+:0=+:0=+:0=+:endoflist=+:0=+:0
